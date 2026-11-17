@@ -157,17 +157,6 @@ document.addEventListener('DOMContentLoaded', () => {
   setInterval(updateCountdown, 1000);
   updateCountdown();
 
-  // Tap to Reveal Countdown Button
-  const revealCountdownBtn = document.getElementById('reveal-countdown-btn');
-  const countdownWrapper = document.getElementById('countdown-wrapper');
-
-  if (revealCountdownBtn && countdownWrapper) {
-    revealCountdownBtn.addEventListener('click', () => {
-      countdownWrapper.classList.remove('hidden');
-      revealCountdownBtn.parentElement.style.display = 'none';
-    });
-  }
-
   // ------------------------------------------------------------------------
   // 5. RSVP BY EVENTS (INTERACTIVE PRESETS & TOGGLES)
   // ------------------------------------------------------------------------
