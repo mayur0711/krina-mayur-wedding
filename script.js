@@ -1,5 +1,5 @@
 /* ==========================================================================
-   RAMITA & ARYAN WEDDING INVITATION — JAVASCRIPT
+   KRINA & MAYUR WEDDING INVITATION — JAVASCRIPT
    Preloader, Intro Video Curtain, Audio Player, Countdown, RSVP & Petals
    ========================================================================== */
 
@@ -247,7 +247,7 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
 
       if (!selectedTeamInput.value) {
-        alert("Please select either Ramita's Side or Aryan's Side to celebrate with!");
+        alert("Please select either Krina's Side or Mayur's Side to celebrate with!");
         return;
       }
 
@@ -281,9 +281,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Store locally in browser storage
       try {
-        const stored = JSON.parse(localStorage.getItem('ramita_aryan_rsvps') || '[]');
+        const stored = JSON.parse(localStorage.getItem('krina_mayur_rsvps') || '[]');
         stored.unshift(rsvpData);
-        localStorage.setItem('ramita_aryan_rsvps', JSON.stringify(stored));
+        localStorage.setItem('krina_mayur_rsvps', JSON.stringify(stored));
       } catch (err) {
         console.error('LocalStorage error:', err);
       }
