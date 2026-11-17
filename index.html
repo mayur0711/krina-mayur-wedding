@@ -36,15 +36,17 @@
        2. INTRO VIDEO CURTAIN OVERLAY
   =============================================== -->
   <div id="intro-curtain" class="intro-curtain">
-    <video id="intro-video" playsinline preload="metadata" src="assets/bird-opening.mp4#t=0.001">
-      Your browser does not support the video tag.
-    </video>
-    <div id="intro-action" class="intro-action">
-      <button id="open-invitation-btn" type="button" class="btn-open-invite">
-        <span class="btn-sparkle">✨</span>
-        <span class="btn-text">Tap to Open Invitation</span>
-        <span class="btn-sparkle">✨</span>
-      </button>
+    <div class="intro-video-wrapper">
+      <video id="intro-video" playsinline preload="metadata" src="assets/bird-opening.mp4#t=0.001">
+        Your browser does not support the video tag.
+      </video>
+      <div id="intro-action" class="intro-action">
+        <button id="open-invitation-btn" type="button" class="btn-open-invite">
+          <span class="btn-sparkle">✨</span>
+          <span class="btn-text">Tap to Open Invitation</span>
+          <span class="btn-sparkle">✨</span>
+        </button>
+      </div>
     </div>
   </div>
 
@@ -165,160 +167,82 @@
         <div class="events-timeline">
 
           <!-- Event 1: Mehendi -->
-          <div class="event-card layout-left">
-            <div class="event-media">
-              <img src="assets/event-1.jpg" alt="Mehendi &amp; Cocktails" class="event-img">
+          <article class="event-card">
+            <div class="event-poster-wrap">
+              <img src="assets/event-1.jpg" alt="Mehendi &amp; Cocktails" class="event-full-poster" loading="lazy">
             </div>
-            <div class="event-details">
-              <div class="event-badge">DAY 1</div>
-              <h3 class="event-title">Mehendi &amp; Cocktails</h3>
-              <p class="event-tagline">“Follow the Colours”</p>
-              <div class="event-info">
-                <p class="event-datetime">
-                  <span class="info-icon">📅</span> Monday, December 7, 2026
-                </p>
-                <p class="event-time">
-                  <span class="info-icon">⏰</span> 07:30 PM Onwards
-                </p>
-                <p class="event-venue">
-                  <span class="info-icon">📍</span> Koti Resorts, Open Terrace
-                </p>
-              </div>
+            <div class="event-footer-bar">
+              <span class="event-pill">DAY 1 · DEC 7</span>
               <a href="https://maps.app.goo.gl/xpGwveeAEZXLg8c17" target="_blank" rel="noreferrer" class="btn-directions">
                 <span>📍</span> Get Directions
               </a>
             </div>
-          </div>
+          </article>
 
           <!-- Event 2: Haldi -->
-          <div class="event-card layout-right">
-            <div class="event-media">
-              <img src="assets/event-2.jpg" alt="Haldi Ceremony" class="event-img">
+          <article class="event-card">
+            <div class="event-poster-wrap">
+              <img src="assets/event-2.jpg" alt="Haldi Ceremony" class="event-full-poster" loading="lazy">
             </div>
-            <div class="event-details">
-              <div class="event-badge">DAY 2 · MORNING</div>
-              <h3 class="event-title">Haldi Ceremony</h3>
-              <p class="event-tagline">“Kickoff the Celebrations”</p>
-              <div class="event-info">
-                <p class="event-datetime">
-                  <span class="info-icon">📅</span> Tuesday, December 8, 2026
-                </p>
-                <p class="event-time">
-                  <span class="info-icon">⏰</span> 11:00 AM Onwards
-                </p>
-                <p class="event-venue">
-                  <span class="info-icon">📍</span> Koti Resorts, Lower Garden
-                </p>
-              </div>
+            <div class="event-footer-bar">
+              <span class="event-pill">DAY 2 MORNING · DEC 8</span>
               <a href="https://maps.app.goo.gl/xpGwveeAEZXLg8c17" target="_blank" rel="noreferrer" class="btn-directions">
                 <span>📍</span> Get Directions
               </a>
             </div>
-          </div>
+          </article>
 
           <!-- Event 3: Sangeet -->
-          <div class="event-card layout-left">
-            <div class="event-media">
-              <img src="assets/event-3.jpg" alt="Ring Ceremony and Sangeet" class="event-img">
+          <article class="event-card">
+            <div class="event-poster-wrap">
+              <img src="assets/event-3.jpg" alt="Ring Ceremony and Sangeet" class="event-full-poster" loading="lazy">
             </div>
-            <div class="event-details">
-              <div class="event-badge">DAY 2 · EVENING</div>
-              <h3 class="event-title">Ring Ceremony &amp; Sangeet</h3>
-              <p class="event-tagline">“Follow the Music and Lights”</p>
-              <div class="event-info">
-                <p class="event-datetime">
-                  <span class="info-icon">📅</span> Tuesday, December 8, 2026
-                </p>
-                <p class="event-time">
-                  <span class="info-icon">⏰</span> 06:30 PM Onwards
-                </p>
-                <p class="event-venue">
-                  <span class="info-icon">📍</span> Koti Resorts, Main Lawn
-                </p>
-              </div>
+            <div class="event-footer-bar">
+              <span class="event-pill">DAY 2 EVENING · DEC 8</span>
               <a href="https://maps.app.goo.gl/xpGwveeAEZXLg8c17" target="_blank" rel="noreferrer" class="btn-directions">
                 <span>📍</span> Get Directions
               </a>
             </div>
-          </div>
+          </article>
 
           <!-- Event 4: Varamala -->
-          <div class="event-card layout-right">
-            <div class="event-media">
-              <img src="assets/event-4.jpg" alt="Garlands at Golden Hour" class="event-img">
+          <article class="event-card">
+            <div class="event-poster-wrap">
+              <img src="assets/event-4.jpg" alt="Garlands at Golden Hour" class="event-full-poster" loading="lazy">
             </div>
-            <div class="event-details">
-              <div class="event-badge">WEDDING DAY</div>
-              <h3 class="event-title">Garlands at Golden Hour (Varamala)</h3>
-              <p class="event-tagline">“Come Witness Our Forever Begin”</p>
-              <div class="event-info">
-                <p class="event-datetime">
-                  <span class="info-icon">📅</span> Wednesday, December 9, 2026
-                </p>
-                <p class="event-time">
-                  <span class="info-icon">⏰</span> 02:30 PM Onwards
-                </p>
-                <p class="event-venue">
-                  <span class="info-icon">📍</span> Koti Resorts, Main Lawn
-                </p>
-              </div>
+            <div class="event-footer-bar">
+              <span class="event-pill">WEDDING DAY · DEC 9</span>
               <a href="https://maps.app.goo.gl/xpGwveeAEZXLg8c17" target="_blank" rel="noreferrer" class="btn-directions">
                 <span>📍</span> Get Directions
               </a>
             </div>
-          </div>
+          </article>
 
           <!-- Event 5: Pheras -->
-          <div class="event-card layout-left">
-            <div class="event-media">
-              <img src="assets/event-5.jpg" alt="Pheras" class="event-img">
+          <article class="event-card">
+            <div class="event-poster-wrap">
+              <img src="assets/event-5.jpg" alt="Pheras" class="event-full-poster" loading="lazy">
             </div>
-            <div class="event-details">
-              <div class="event-badge">THE SACRED VOWS</div>
-              <h3 class="event-title">The Sacred Pheras</h3>
-              <p class="event-tagline">“Seven Vows of Lifetime Together”</p>
-              <div class="event-info">
-                <p class="event-datetime">
-                  <span class="info-icon">📅</span> Wednesday, December 9, 2026
-                </p>
-                <p class="event-time">
-                  <span class="info-icon">⏰</span> 06:30 PM Onwards
-                </p>
-                <p class="event-venue">
-                  <span class="info-icon">📍</span> Koti Resorts, Main Lawn
-                </p>
-              </div>
+            <div class="event-footer-bar">
+              <span class="event-pill">THE SACRED VOWS · DEC 9</span>
               <a href="https://maps.app.goo.gl/xpGwveeAEZXLg8c17" target="_blank" rel="noreferrer" class="btn-directions">
                 <span>📍</span> Get Directions
               </a>
             </div>
-          </div>
+          </article>
 
           <!-- Event 6: After Party -->
-          <div class="event-card layout-right">
-            <div class="event-media">
-              <img src="assets/event-6.jpg" alt="After Party" class="event-img">
+          <article class="event-card">
+            <div class="event-poster-wrap">
+              <img src="assets/event-6.jpg" alt="After Party" class="event-full-poster" loading="lazy">
             </div>
-            <div class="event-details">
-              <div class="event-badge">CELEBRATION</div>
-              <h3 class="event-title">After Party &amp; Dinner</h3>
-              <p class="event-tagline">“Drinks, Dinner &amp; Dance”</p>
-              <div class="event-info">
-                <p class="event-datetime">
-                  <span class="info-icon">📅</span> Wednesday, December 9, 2026
-                </p>
-                <p class="event-time">
-                  <span class="info-icon">⏰</span> 10:00 PM Onwards
-                </p>
-                <p class="event-venue">
-                  <span class="info-icon">📍</span> Indoor Banquet, Koti Resorts
-                </p>
-              </div>
+            <div class="event-footer-bar">
+              <span class="event-pill">CELEBRATION · DEC 9</span>
               <a href="https://maps.app.goo.gl/xpGwveeAEZXLg8c17" target="_blank" rel="noreferrer" class="btn-directions">
                 <span>📍</span> Get Directions
               </a>
             </div>
-          </div>
+          </article>
 
         </div>
       </div>

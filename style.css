@@ -1,13 +1,12 @@
 /* ==========================================================================
    RAMITA & ARYAN WEDDING INVITATION — STYLESHEET
-   Exact Typography, Royal Indian Palette, Gradients, Animations & Responsive Design
+   Desktop & Mobile Optimized Royal Indian Wedding Layout
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
-   1. CSS Custom Properties / Design Tokens
+   1. Design Tokens & CSS Variables
    -------------------------------------------------------------------------- */
 :root {
-  /* Core Colors */
   --bg-cream: #fdfbf7;
   --bg-cream-soft: #fbf8f2;
   --bg-card: #ffffff;
@@ -66,12 +65,15 @@ html {
 }
 
 body {
-  background-color: var(--bg-cream);
+  /* Elegant ambient desktop backdrop */
+  background: radial-gradient(circle at 50% 20%, #f7f2ea 0%, #ede3d1 100%);
+  background-attachment: fixed;
   color: var(--color-ink);
   font-family: var(--font-serif);
   line-height: 1.6;
   overflow-x: hidden;
   position: relative;
+  min-height: 100vh;
 }
 
 img, video {
@@ -89,11 +91,31 @@ a {
   text-decoration: none;
 }
 
+/* --------------------------------------------------------------------------
+   3. Desktop Centered Invitation Canvas
+   -------------------------------------------------------------------------- */
+.main-content {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: var(--bg-cream);
+  position: relative;
+  box-shadow: 0 20px 60px rgba(43, 31, 29, 0.12), 0 0 0 1px rgba(212, 175, 55, 0.25);
+  min-height: 100vh;
+}
+
+@media (min-width: 641px) {
+  .main-content {
+    margin: 2rem auto;
+    border-radius: 28px;
+    overflow: hidden;
+  }
+}
+
 .container {
   width: 100%;
-  max-width: 1100px;
+  padding: 0 1.25rem;
   margin: 0 auto;
-  padding: 0 1.5rem;
 }
 
 .text-center {
@@ -105,56 +127,56 @@ a {
 }
 
 /* --------------------------------------------------------------------------
-   3. Decorative Components & Dividers
+   4. Dividers & Badges
    -------------------------------------------------------------------------- */
 .gold-divider {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
-  margin: 1.25rem auto;
+  gap: 0.85rem;
+  margin: 1rem auto;
 }
 
 .gold-divider .line {
   height: 1px;
-  width: 60px;
+  width: 50px;
   background-color: var(--color-gold);
   opacity: 0.6;
 }
 
 .gold-divider .divider-icon {
-  font-size: 1.1rem;
+  font-size: 1rem;
   opacity: 0.85;
 }
 
 .section-tag {
   font-family: var(--font-cinzel);
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 700;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.22em;
   color: var(--color-gold-deep);
   text-transform: uppercase;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.35rem;
 }
 
 .section-title {
   font-family: var(--font-script);
-  font-size: 3.2rem;
+  font-size: 3rem;
   color: var(--color-primary);
   font-weight: 400;
-  line-height: 1.2;
+  line-height: 1.15;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 480px) {
   .section-title {
-    font-size: 2.5rem;
+    font-size: 2.4rem;
   }
 }
 
 /* Corner Ornaments */
 .corner-cherry-blossom {
   position: absolute;
-  width: 180px;
+  width: 130px;
   height: auto;
   pointer-events: none;
   opacity: 0.85;
@@ -174,22 +196,22 @@ a {
 
 .hanging-lantern {
   position: absolute;
-  width: 55px;
+  width: 44px;
   height: auto;
   pointer-events: none;
   opacity: 0.9;
   z-index: 2;
-  top: 1.5rem;
+  top: 1.2rem;
   animation: lanternSway 4s ease-in-out infinite alternate;
   transform-origin: top center;
 }
 
 .hanging-lantern.lantern-left {
-  left: 2rem;
+  left: 1rem;
 }
 
 .hanging-lantern.lantern-right {
-  right: 2rem;
+  right: 1rem;
   animation-delay: 1.5s;
 }
 
@@ -198,15 +220,8 @@ a {
   100% { transform: rotate(3deg); }
 }
 
-@media (max-width: 640px) {
-  .corner-cherry-blossom { width: 110px; }
-  .hanging-lantern { width: 38px; top: 1rem; }
-  .hanging-lantern.lantern-left { left: 0.8rem; }
-  .hanging-lantern.lantern-right { right: 0.8rem; }
-}
-
 /* --------------------------------------------------------------------------
-   4. Preloader Screen
+   5. Preloader Screen
    -------------------------------------------------------------------------- */
 .preloader {
   position: fixed;
@@ -236,33 +251,33 @@ a {
   position: relative;
   text-align: center;
   padding: 2rem;
-  max-width: 380px;
+  max-width: 360px;
   width: 90%;
 }
 
 .preloader-idol {
-  width: 85px;
-  height: 85px;
+  width: 80px;
+  height: 80px;
   object-fit: contain;
-  margin: 0 auto 1.5rem;
+  margin: 0 auto 1.25rem;
   filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.08));
   animation: pulseSlow 2.5s infinite ease-in-out;
 }
 
 .preloader-title {
   font-family: var(--font-script);
-  font-size: 3rem;
+  font-size: 2.8rem;
   color: var(--color-primary);
   margin-bottom: 0.25rem;
 }
 
 .preloader-subtitle {
   font-family: var(--font-cinzel);
-  font-size: 0.75rem;
-  letter-spacing: 0.25em;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
   color: var(--color-gold-deep);
   text-transform: uppercase;
-  margin-bottom: 2rem;
+  margin-bottom: 1.75rem;
 }
 
 .preloader-bar-wrap {
@@ -295,22 +310,23 @@ a {
 }
 
 /* --------------------------------------------------------------------------
-   5. Intro Video Curtain Overlay
+   6. Intro Video Curtain Overlay (Desktop Frame & Mobile Fullscreen)
    -------------------------------------------------------------------------- */
 .intro-curtain {
   position: fixed;
   inset: 0;
   z-index: 1000;
-  background-color: var(--bg-cream);
+  background: radial-gradient(circle at center, rgba(35, 22, 25, 0.96) 0%, rgba(18, 12, 13, 0.98) 100%);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  transition: opacity 1.6s cubic-bezier(0.25, 1, 0.5, 1), 
-              transform 1.6s cubic-bezier(0.25, 1, 0.5, 1),
-              filter 1.6s cubic-bezier(0.25, 1, 0.5, 1),
-              visibility 1.6s;
-  will-change: opacity, transform, filter;
+  transition: opacity 1.4s cubic-bezier(0.25, 1, 0.5, 1), 
+              transform 1.4s cubic-bezier(0.25, 1, 0.5, 1),
+              filter 1.4s cubic-bezier(0.25, 1, 0.5, 1),
+              visibility 1.4s;
 }
 
 .intro-curtain.curtain-opened {
@@ -321,6 +337,18 @@ a {
   filter: blur(6px);
 }
 
+.intro-video-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  height: 88vh;
+  max-height: 780px;
+  border-radius: 26px;
+  overflow: hidden;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.5), 0 0 0 2px rgba(212, 175, 55, 0.35);
+  background: #000;
+}
+
 #intro-video {
   width: 100%;
   height: 100%;
@@ -329,63 +357,73 @@ a {
 
 .intro-action {
   position: absolute;
-  bottom: 5rem;
+  bottom: 2.5rem;
   left: 0;
   width: 100%;
   display: flex;
   justify-content: center;
   z-index: 10;
-  padding: 0 1.5rem;
+  padding: 0 1rem;
 }
 
 .btn-open-invite {
-  background: rgba(255, 255, 255, 0.65);
+  background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(212, 175, 55, 0.5);
+  border: 1px solid rgba(212, 175, 55, 0.6);
   color: var(--color-primary);
   font-family: var(--font-cinzel);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  padding: 0.9rem 2.2rem;
+  padding: 0.85rem 2rem;
   border-radius: 999px;
   cursor: pointer;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12), inset 0 0 15px rgba(255, 255, 255, 0.6);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   display: inline-flex;
   align-items: center;
-  gap: 0.75rem;
-  transition: transform var(--transition-fast), background var(--transition-fast), box-shadow var(--transition-fast);
+  gap: 0.6rem;
+  transition: transform var(--transition-fast), background var(--transition-fast);
 }
 
 .btn-open-invite:hover {
-  transform: scale(1.05);
-  background: rgba(255, 255, 255, 0.85);
-  box-shadow: 0 12px 35px rgba(130, 32, 48, 0.2);
+  transform: scale(1.04);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+@media (max-width: 640px) {
+  .intro-video-wrapper {
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+  }
 }
 
 /* --------------------------------------------------------------------------
-   6. Floating Music Player Button
+   7. Floating Music Player Button
    -------------------------------------------------------------------------- */
 .music-toggle {
   position: fixed;
   bottom: 1.5rem;
   right: 1.5rem;
   z-index: 999;
-  width: 48px;
-  height: 48px;
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
-  background: rgba(43, 31, 29, 0.85);
+  background: rgba(43, 31, 29, 0.88);
   color: #fdfbf7;
-  border: 1px solid rgba(212, 175, 55, 0.4);
+  border: 1px solid rgba(212, 175, 55, 0.5);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow: var(--shadow-elegant);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
   transition: transform var(--transition-fast), background var(--transition-fast);
 }
 
@@ -395,12 +433,12 @@ a {
 }
 
 .music-icon {
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
 }
 
 /* --------------------------------------------------------------------------
-   7. Floating Falling Petals
+   8. Floating Falling Petals
    -------------------------------------------------------------------------- */
 .petals-container {
   position: fixed;
@@ -413,11 +451,11 @@ a {
 .falling-petal {
   position: absolute;
   top: -40px;
-  width: 20px;
-  height: 25px;
+  width: 18px;
+  height: 24px;
   background: radial-gradient(circle at 30% 30%, #fbcfe8, #f43f5e);
   border-radius: 50% 0 50% 50%;
-  opacity: 0.75;
+  opacity: 0.7;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.08));
   animation: fallDown linear infinite, sway ease-in-out infinite alternate;
 }
@@ -437,7 +475,7 @@ a {
 }
 
 /* --------------------------------------------------------------------------
-   8. Hero Section
+   9. Hero Section
    -------------------------------------------------------------------------- */
 .section-hero {
   width: 100%;
@@ -453,30 +491,30 @@ a {
 }
 
 /* --------------------------------------------------------------------------
-   9. Blessings & Countdown Section
+   10. Blessings & Countdown Section
    -------------------------------------------------------------------------- */
 .section-blessings {
   position: relative;
-  padding: 5rem 1.5rem;
+  padding: 4rem 1.25rem 4.5rem;
   background-color: var(--bg-cream);
   border-top: 1px solid rgba(212, 175, 55, 0.25);
   overflow: hidden;
 }
 
 .ganesh-wrap {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
 }
 
 .ganesh-idol {
-  width: 80px;
+  width: 75px;
   height: auto;
-  margin: 0 auto 0.75rem;
+  margin: 0 auto 0.6rem;
   filter: drop-shadow(0 4px 8px rgba(0,0,0,0.06));
 }
 
 .ganesh-text {
   font-family: var(--font-cinzel);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   letter-spacing: 0.2em;
   color: var(--color-gold-deep);
   font-weight: 600;
@@ -484,16 +522,16 @@ a {
 
 .couple-names {
   font-family: var(--font-script);
-  font-size: 4.5rem;
+  font-size: 3.8rem;
   color: var(--color-primary);
   line-height: 1.1;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.35rem;
 }
 
 .wedding-date-hero {
   font-family: var(--font-cinzel);
-  font-size: 0.9rem;
-  letter-spacing: 0.2em;
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
   color: var(--color-gold-deep);
   font-weight: 600;
   text-transform: uppercase;
@@ -501,15 +539,15 @@ a {
 
 .hashtag {
   font-family: var(--font-cinzel);
-  font-size: 0.85rem;
-  letter-spacing: 0.25em;
+  font-size: 0.8rem;
+  letter-spacing: 0.22em;
   color: var(--color-primary);
   font-weight: 700;
   margin-top: 0.5rem;
 }
 
 .reveal-btn-wrap {
-  margin-top: 2.5rem;
+  margin-top: 2rem;
 }
 
 .btn-reveal {
@@ -517,18 +555,18 @@ a {
   color: #ffffff;
   border: none;
   font-family: var(--font-cinzel);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  padding: 0.85rem 2rem;
+  padding: 0.8rem 1.8rem;
   border-radius: 999px;
   cursor: pointer;
   box-shadow: var(--shadow-gold);
   transition: transform var(--transition-fast), box-shadow var(--transition-fast);
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.5rem;
 }
 
 .btn-reveal:hover {
@@ -538,7 +576,7 @@ a {
 
 /* Countdown Grid */
 .countdown-wrapper {
-  margin-top: 3rem;
+  margin-top: 2.5rem;
   animation: fadeIn 0.8s ease-out;
 }
 
@@ -546,16 +584,16 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.75rem;
-  margin-bottom: 3rem;
+  gap: 0.5rem;
+  margin-bottom: 2.5rem;
 }
 
 .timer-box {
   background: #ffffff;
   border: 1px solid var(--color-border);
-  border-radius: 16px;
-  padding: 1.25rem 1rem;
-  min-width: 80px;
+  border-radius: 14px;
+  padding: 1rem 0.6rem;
+  min-width: 68px;
   box-shadow: var(--shadow-sm);
   display: flex;
   flex-direction: column;
@@ -564,7 +602,7 @@ a {
 
 .timer-number {
   font-family: var(--font-serif);
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 700;
   color: var(--color-primary);
   line-height: 1;
@@ -572,34 +610,34 @@ a {
 
 .timer-label {
   font-family: var(--font-cinzel);
-  font-size: 0.65rem;
-  letter-spacing: 0.15em;
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
   color: var(--color-gold-deep);
-  margin-top: 0.5rem;
+  margin-top: 0.4rem;
   font-weight: 600;
 }
 
 .timer-sep {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: var(--color-gold);
   font-weight: bold;
 }
 
 /* Polaroid Roka Card */
 .roka-card {
-  max-width: 420px;
+  max-width: 360px;
   margin: 0 auto;
   background: #ffffff;
-  padding: 0.85rem;
-  border-radius: 20px;
-  border: 6px solid #ffffff;
+  padding: 0.75rem;
+  border-radius: 18px;
+  border: 4px solid #ffffff;
   box-shadow: var(--shadow-elegant);
   position: relative;
 }
 
 .roka-image-wrap {
   position: relative;
-  border-radius: 14px;
+  border-radius: 12px;
   overflow: hidden;
   aspect-ratio: 4 / 5;
 }
@@ -621,134 +659,82 @@ a {
   bottom: 0;
   inset-inline: 0;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, transparent 100%);
-  padding: 1.5rem 1rem 0.85rem;
+  padding: 1.25rem 1rem 0.65rem;
   color: #fde047;
   font-family: var(--font-script);
-  font-size: 2.2rem;
-}
-
-@media (max-width: 640px) {
-  .couple-names { font-size: 3.2rem; }
-  .timer-box { min-width: 65px; padding: 0.85rem 0.5rem; }
-  .timer-number { font-size: 1.8rem; }
-  .timer-sep { font-size: 1.4rem; }
+  font-size: 1.9rem;
 }
 
 /* --------------------------------------------------------------------------
-   10. Events Schedule Section
+   11. Events Schedule Section (Vertical Full Poster Cards)
    -------------------------------------------------------------------------- */
 .section-events {
-  padding: 5rem 0;
+  padding: 4.5rem 0 3.5rem;
   background-color: var(--bg-sage-soft);
   position: relative;
   border-top: 1px solid rgba(212, 175, 55, 0.25);
 }
 
 .section-header {
-  margin-bottom: 3.5rem;
+  margin-bottom: 2.5rem;
 }
 
 .events-timeline {
   display: flex;
   flex-direction: column;
-  gap: 3.5rem;
+  gap: 2.5rem;
+  padding: 0 0.85rem;
 }
 
 .event-card {
-  display: flex;
-  align-items: center;
   background: #ffffff;
-  border-radius: 24px;
+  border-radius: 22px;
   overflow: hidden;
-  border: 1px solid var(--color-border);
-  box-shadow: var(--shadow-md);
-  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+  box-shadow: 0 14px 40px rgba(43, 31, 29, 0.1);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .event-card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-elegant);
+  box-shadow: 0 18px 45px rgba(130, 32, 48, 0.18);
 }
 
-.event-card.layout-right {
-  flex-direction: row-reverse;
-}
-
-.event-media {
-  flex: 1.1;
-  min-height: 380px;
-  overflow: hidden;
-  position: relative;
-}
-
-.event-img {
+.event-poster-wrap {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.7s ease;
+  position: relative;
+  background: #fdfbf7;
 }
 
-.event-card:hover .event-img {
-  transform: scale(1.05);
+.event-full-poster {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
-.event-details {
-  flex: 1;
-  padding: 3rem 2.5rem;
+.event-footer-bar {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1.25rem;
+  background: #fff8f8;
+  border-top: 1px solid rgba(212, 175, 55, 0.25);
 }
 
-.event-badge {
-  display: inline-block;
-  align-self: flex-start;
+.event-pill {
   font-family: var(--font-cinzel);
   font-size: 0.7rem;
   font-weight: 700;
-  letter-spacing: 0.18em;
-  padding: 0.35rem 0.85rem;
-  border-radius: 999px;
-  background: rgba(130, 32, 48, 0.08);
+  letter-spacing: 0.15em;
   color: var(--color-primary);
-  margin-bottom: 1rem;
-}
-
-.event-title {
-  font-family: var(--font-serif);
-  font-size: 2.2rem;
-  font-weight: 600;
-  color: var(--color-primary);
-  line-height: 1.2;
-  margin-bottom: 0.35rem;
-}
-
-.event-tagline {
-  font-style: italic;
-  color: var(--color-gold-deep);
-  font-size: 1.1rem;
-  margin-bottom: 1.5rem;
-}
-
-.event-info {
-  margin-bottom: 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  font-size: 1.05rem;
-  color: var(--color-ink);
-}
-
-.info-icon {
-  margin-right: 0.5rem;
+  text-transform: uppercase;
 }
 
 .btn-directions {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  align-self: flex-start;
-  padding: 0.65rem 1.4rem;
+  gap: 0.4rem;
+  padding: 0.55rem 1.25rem;
   border-radius: 999px;
   background: var(--color-primary);
   color: #ffffff;
@@ -761,31 +747,14 @@ a {
 
 .btn-directions:hover {
   background: var(--color-primary-dark);
-  transform: translateY(-2px);
-}
-
-@media (max-width: 860px) {
-  .event-card, .event-card.layout-right {
-    flex-direction: column;
-  }
-  .event-media {
-    width: 100%;
-    min-height: 280px;
-    max-height: 320px;
-  }
-  .event-details {
-    padding: 2rem 1.5rem;
-  }
-  .event-title {
-    font-size: 1.8rem;
-  }
+  transform: translateY(-1px);
 }
 
 /* --------------------------------------------------------------------------
-   11. RSVP by Events (Interactive Selector)
+   12. RSVP by Events (Interactive Selector)
    -------------------------------------------------------------------------- */
 .section-rsvp-events {
-  padding: 5rem 1.5rem;
+  padding: 4rem 1rem;
   background-color: var(--bg-cream);
   border-top: 1px solid rgba(212, 175, 55, 0.25);
 }
@@ -794,8 +763,8 @@ a {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.75rem;
-  margin: 2.5rem 0;
+  gap: 0.6rem;
+  margin: 2rem 0;
 }
 
 .btn-preset {
@@ -803,9 +772,9 @@ a {
   border: 1px solid var(--color-border);
   color: var(--color-ink);
   font-family: var(--font-cinzel);
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 600;
-  padding: 0.6rem 1.25rem;
+  padding: 0.55rem 1rem;
   border-radius: 999px;
   cursor: pointer;
   transition: all var(--transition-fast);
@@ -825,40 +794,43 @@ a {
 
 .rsvp-cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1.25rem;
-  max-width: 950px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.85rem;
   margin: 0 auto;
 }
 
 .rsvp-toggle-card {
   background: #ffffff;
   border: 2px solid var(--color-border);
-  border-radius: 18px;
-  padding: 1.5rem 1rem;
+  border-radius: 16px;
+  padding: 1.25rem 0.85rem;
   cursor: pointer;
   position: relative;
   transition: all var(--transition-fast);
   text-align: center;
 }
 
+.rsvp-toggle-card:last-child {
+  grid-column: span 2;
+}
+
 .rsvp-toggle-card.selected {
   border-color: var(--color-primary);
-  background: rgba(130, 32, 48, 0.03);
+  background: rgba(130, 32, 48, 0.04);
 }
 
 .check-indicator {
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
   border-radius: 50%;
   background: #e5e7eb;
   color: #ffffff;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 0.75rem;
+  margin: 0 auto 0.6rem;
   transition: background var(--transition-fast);
 }
 
@@ -868,24 +840,24 @@ a {
 
 .rsvp-toggle-card h4 {
   font-family: var(--font-serif);
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   color: var(--color-primary);
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.25rem;
 }
 
 .rsvp-toggle-card p {
   font-family: var(--font-cinzel);
-  font-size: 0.7rem;
-  letter-spacing: 0.1em;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
   color: var(--color-ink-muted);
 }
 
 /* --------------------------------------------------------------------------
-   12. Wardrobe Guide Section
+   13. Wardrobe Guide Section
    -------------------------------------------------------------------------- */
 .section-wardrobe {
   position: relative;
-  padding: 5rem 1.5rem;
+  padding: 4.5rem 1rem;
   background-color: #fdfaf5;
   border-top: 1px solid rgba(212, 175, 55, 0.25);
   overflow: hidden;
@@ -894,16 +866,14 @@ a {
 .wardrobe-sub {
   font-style: italic;
   color: var(--color-gold-deep);
-  font-size: 1.15rem;
-  margin-bottom: 3.5rem;
+  font-size: 1.05rem;
+  margin-bottom: 2.5rem;
 }
 
 .wardrobe-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 2rem;
-  max-width: 1050px;
-  margin: 0 auto;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem 1rem;
 }
 
 .wardrobe-card {
@@ -913,22 +883,28 @@ a {
   align-items: center;
 }
 
+.wardrobe-card:last-child {
+  grid-column: span 2;
+  max-width: 280px;
+  margin: 0 auto;
+}
+
 .wardrobe-img-wrap {
-  width: 140px;
-  height: 140px;
-  margin: 0 auto 1.25rem;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 1rem;
   border-radius: 50%;
   background: #ffffff;
   box-shadow: var(--shadow-sm);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
+  padding: 0.85rem;
   transition: transform var(--transition-smooth);
 }
 
 .wardrobe-card:hover .wardrobe-img-wrap {
-  transform: scale(1.08) translateY(-4px);
+  transform: scale(1.06) translateY(-3px);
 }
 
 .wardrobe-img-wrap img {
@@ -939,36 +915,35 @@ a {
 
 .wardrobe-tag {
   font-family: var(--font-cinzel);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.15em;
   color: var(--color-primary);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.35rem;
 }
 
 .wardrobe-desc {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: var(--color-ink-muted);
   line-height: 1.4;
 }
 
 /* --------------------------------------------------------------------------
-   13. Venue Map Section
+   14. Venue Map Section
    -------------------------------------------------------------------------- */
 .section-venue {
-  padding: 5rem 1.5rem;
+  padding: 4.5rem 1rem;
   background-color: var(--bg-sage-soft);
   border-top: 1px solid rgba(212, 175, 55, 0.25);
 }
 
 .venue-card-wrapper {
-  max-width: 750px;
-  margin: 3rem auto 0;
+  margin-top: 2.5rem;
 }
 
 .venue-card {
   background: #ffffff;
-  border-radius: 24px;
+  border-radius: 20px;
   overflow: hidden;
   box-shadow: var(--shadow-elegant);
   border: 1px solid var(--color-border);
@@ -977,7 +952,7 @@ a {
 
 .venue-map-container {
   width: 100%;
-  height: 320px;
+  height: 280px;
   position: relative;
 }
 
@@ -989,13 +964,13 @@ a {
 
 .map-badge {
   position: absolute;
-  top: 1rem;
-  left: 1rem;
+  top: 0.85rem;
+  left: 0.85rem;
   background: rgba(255, 255, 255, 0.95);
   color: var(--color-primary);
-  padding: 0.4rem 0.85rem;
+  padding: 0.35rem 0.75rem;
   border-radius: 6px;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-family: var(--font-sans);
   font-weight: 600;
   box-shadow: var(--shadow-sm);
@@ -1003,69 +978,67 @@ a {
 }
 
 .venue-content {
-  padding: 2rem;
+  padding: 1.5rem;
 }
 
 .venue-sub {
   font-family: var(--font-cinzel);
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.2em;
   color: var(--color-primary);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
 }
 
 .venue-name {
   font-family: var(--font-serif);
-  font-size: 1.6rem;
+  font-size: 1.45rem;
   font-weight: 700;
   color: var(--color-primary);
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.6rem;
 }
 
 .venue-desc {
   color: var(--color-ink-muted);
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
 }
 
 .btn-large {
-  padding: 0.85rem 2rem;
-  font-size: 0.85rem;
+  padding: 0.75rem 1.75rem;
+  font-size: 0.8rem;
 }
 
 /* --------------------------------------------------------------------------
-   14. RSVP Form Section
+   15. RSVP Form Section
    -------------------------------------------------------------------------- */
 .section-rsvp {
-  padding: 5rem 1.5rem;
+  padding: 4.5rem 1rem;
   background-color: var(--bg-cream);
   border-top: 1px solid rgba(212, 175, 55, 0.25);
 }
 
 .rsvp-form-box {
-  max-width: 680px;
-  margin: 0 auto;
   background: #ffffff;
-  border-radius: 28px;
-  padding: 3rem 2.5rem;
+  border-radius: 22px;
+  padding: 2.25rem 1.5rem;
   border: 1px solid var(--color-border);
   box-shadow: var(--shadow-elegant);
 }
 
 .form-group {
-  margin-bottom: 2rem;
+  margin-bottom: 1.75rem;
 }
 
 .form-label {
   display: block;
   font-family: var(--font-cinzel);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   color: var(--color-primary);
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.6rem;
 }
 
 .form-label .required {
@@ -1076,32 +1049,31 @@ a {
 .team-selection {
   display: flex;
   justify-content: center;
-  gap: 1.25rem;
-  margin-top: 0.5rem;
+  gap: 1rem;
+  margin-top: 0.4rem;
 }
 
 .btn-team {
   flex: 1;
-  max-width: 220px;
   background: #ffffff;
   border: 2px solid var(--color-border);
-  border-radius: 18px;
-  padding: 1rem 0.75rem;
+  border-radius: 16px;
+  padding: 0.85rem 0.6rem;
   cursor: pointer;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.4rem;
   transition: all var(--transition-fast);
 }
 
 .btn-team .team-icon {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
 }
 
 .btn-team .team-name {
   font-family: var(--font-cinzel);
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   color: var(--color-ink);
@@ -1124,12 +1096,12 @@ a {
 /* Form Inputs */
 .form-input, .form-select, .form-textarea {
   width: 100%;
-  padding: 0.85rem 1.25rem;
+  padding: 0.8rem 1rem;
   border: 1px solid var(--color-border);
   border-radius: 12px;
   background-color: var(--bg-cream-soft);
   color: var(--color-ink);
-  font-size: 1rem;
+  font-size: 0.95rem;
   outline: none;
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
@@ -1143,30 +1115,30 @@ a {
 /* Attendance Radio */
 .attendance-options {
   display: flex;
-  gap: 2rem;
-  margin-top: 0.5rem;
+  gap: 1.5rem;
+  margin-top: 0.4rem;
 }
 
 .radio-label {
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.5rem;
   cursor: pointer;
-  font-size: 1.05rem;
+  font-size: 0.95rem;
 }
 
 .radio-label input {
   accent-color: var(--color-primary);
-  width: 18px;
-  height: 18px;
+  width: 17px;
+  height: 17px;
 }
 
 /* Pill Checkboxes */
 .pill-checkboxes {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-top: 0.5rem;
+  gap: 0.6rem;
+  margin-top: 0.4rem;
 }
 
 .pill-check {
@@ -1174,10 +1146,10 @@ a {
   align-items: center;
   background: var(--bg-cream-soft);
   border: 1px solid var(--color-border);
-  padding: 0.5rem 1rem;
+  padding: 0.45rem 0.85rem;
   border-radius: 999px;
   cursor: pointer;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   transition: all var(--transition-fast);
   user-select: none;
 }
@@ -1195,7 +1167,7 @@ a {
 
 /* Submit Button */
 .submit-wrap {
-  margin-top: 2.5rem;
+  margin-top: 2rem;
 }
 
 .btn-submit {
@@ -1203,10 +1175,10 @@ a {
   color: #ffffff;
   border: none;
   font-family: var(--font-cinzel);
-  font-size: 0.95rem;
+  font-size: 0.88rem;
   font-weight: 700;
   letter-spacing: 0.15em;
-  padding: 1rem 3rem;
+  padding: 0.9rem 2.5rem;
   border-radius: 999px;
   cursor: pointer;
   box-shadow: var(--shadow-elegant);
@@ -1219,17 +1191,17 @@ a {
 }
 
 .rsvp-contact {
-  margin-top: 2.5rem;
+  margin-top: 2rem;
   text-align: center;
-  padding-top: 1.5rem;
+  padding-top: 1.25rem;
   border-top: 1px dashed var(--color-border);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: var(--color-ink-muted);
 }
 
 .contact-link {
   display: inline-block;
-  margin-top: 0.5rem;
+  margin-top: 0.4rem;
   color: var(--color-primary);
   font-weight: 600;
 }
@@ -1237,21 +1209,21 @@ a {
 /* RSVP Success Card */
 .rsvp-success-card {
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 1.5rem 0.5rem;
   animation: fadeIn 0.8s ease-out;
 }
 
 .success-title {
   font-family: var(--font-script);
-  font-size: 3rem;
+  font-size: 2.6rem;
   color: var(--color-primary);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
 }
 
 .success-photo-wrap {
-  max-width: 280px;
+  max-width: 250px;
   aspect-ratio: 4 / 5;
-  margin: 0 auto 1.5rem;
+  margin: 0 auto 1.25rem;
   border-radius: 16px;
   overflow: hidden;
   border: 4px solid #ffffff;
@@ -1265,11 +1237,11 @@ a {
 }
 
 .success-message {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: var(--color-ink);
-  max-width: 480px;
-  margin: 0 auto 2rem;
-  line-height: 1.6;
+  max-width: 440px;
+  margin: 0 auto 1.5rem;
+  line-height: 1.55;
 }
 
 .btn-secondary {
@@ -1277,9 +1249,9 @@ a {
   border: 1px solid var(--color-primary);
   color: var(--color-primary);
   font-family: var(--font-cinzel);
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 700;
-  padding: 0.65rem 1.8rem;
+  padding: 0.6rem 1.6rem;
   border-radius: 999px;
   cursor: pointer;
   transition: all var(--transition-fast);
@@ -1291,29 +1263,29 @@ a {
 }
 
 /* --------------------------------------------------------------------------
-   15. Site Footer
+   16. Site Footer
    -------------------------------------------------------------------------- */
 .site-footer {
   background-color: var(--color-ink);
   color: var(--bg-cream);
-  padding: 4.5rem 1.5rem;
+  padding: 3.5rem 1.25rem;
   border-top: 2px solid var(--color-gold);
 }
 
 .footer-tag {
   font-family: var(--font-cinzel);
-  font-size: 0.75rem;
-  letter-spacing: 0.4em;
+  font-size: 0.7rem;
+  letter-spacing: 0.35em;
   color: var(--color-gold-soft);
   font-weight: 700;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.6rem;
 }
 
 .footer-couple {
   font-family: var(--font-script);
-  font-size: 4rem;
+  font-size: 3.5rem;
   color: var(--bg-cream);
-  line-height: 1.2;
+  line-height: 1.15;
 }
 
 .footer-couple .flourish {
@@ -1323,29 +1295,23 @@ a {
 .footer-date {
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: 1.35rem;
+  font-size: 1.2rem;
   color: var(--color-gold-soft);
-  margin-top: 0.5rem;
+  margin-top: 0.4rem;
 }
 
 .footer-hashtag {
   font-family: var(--font-cinzel);
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   letter-spacing: 0.2em;
   color: rgba(253, 251, 247, 0.7);
-  margin-top: 0.5rem;
+  margin-top: 0.4rem;
 }
 
 /* --------------------------------------------------------------------------
-   16. Keyframe Animations
+   17. Keyframe Animations
    -------------------------------------------------------------------------- */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(12px); }
+  from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
-}
-
-@media (max-width: 640px) {
-  .rsvp-form-box { padding: 2rem 1.25rem; }
-  .attendance-options { flex-direction: column; gap: 0.75rem; }
-  .footer-couple { font-size: 3rem; }
 }
