@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ramita &amp; Aryan — Wedding Invitation · 9th December 2026</title>
+  <meta name="description" content="Join Ramita &amp; Aryan for their wedding ceremony on Wednesday, 9th December 2026 at Koti Resorts, Shimla.">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ==============================================
+       1. PRELOADER SCREEN
+  =============================================== -->
+  <div id="preloader" class="preloader">
+    <div class="preloader-glow"></div>
+    <div class="preloader-content">
+      <img src="assets/ganesh-idol.png" alt="Shree Ganeshay Namah" class="preloader-idol">
+      <h1 class="preloader-title">Ramita &amp; Aryan</h1>
+      <p class="preloader-subtitle">Wedding Invitation · Dec 9, 2026</p>
+      <div class="preloader-bar-wrap">
+        <div id="preloader-bar" class="preloader-bar"></div>
+      </div>
+      <span id="preloader-percent" class="preloader-percent">0%</span>
+    </div>
+  </div>
+
+  <!-- ==============================================
+       2. INTRO VIDEO CURTAIN OVERLAY
+  =============================================== -->
+  <div id="intro-curtain" class="intro-curtain">
+    <video id="intro-video" playsinline preload="metadata" src="assets/bird-opening.mp4#t=0.001">
+      Your browser does not support the video tag.
+    </video>
+    <div id="intro-action" class="intro-action">
+      <button id="open-invitation-btn" type="button" class="btn-open-invite">
+        <span class="btn-sparkle">✨</span>
+        <span class="btn-text">Tap to Open Invitation</span>
+        <span class="btn-sparkle">✨</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ==============================================
+       3. FLOATING MUSIC TOGGLE BUTTON
+  =============================================== -->
+  <audio id="bg-audio" src="audio/background.mp3" preload="auto" loop></audio>
+  <button id="music-toggle" type="button" class="music-toggle" aria-label="Toggle background music">
+    <svg id="music-icon-play" class="music-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M11 5L6 9H2v6h4l5 4V5z"></path>
+      <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+    </svg>
+    <svg id="music-icon-mute" class="music-icon hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M11 5L6 9H2v6h4l5 4V5z"></path>
+      <line x1="23" y1="9" x2="17" y2="15"></line>
+      <line x1="17" y1="9" x2="23" y2="15"></line>
+    </svg>
+  </button>
+
+  <!-- ==============================================
+       4. FLOATING PETALS CONTAINER
+  =============================================== -->
+  <div id="petals-container" class="petals-container" aria-hidden="true"></div>
+
+  <!-- ==============================================
+       5. MAIN PAGE CONTENT
+  =============================================== -->
+  <main class="main-content">
+
+    <!-- HERO BANNER -->
+    <section class="section-hero">
+      <img src="assets/main-hero.png" alt="Ramita &amp; Aryan Wedding Invitation" class="hero-image">
+    </section>
+
+    <!-- BLESSINGS & COUNTDOWN SECTION -->
+    <section class="section-blessings">
+      <!-- Decorative Corner Elements -->
+      <img src="assets/cherry-blossom-corner.png" alt="" class="corner-cherry-blossom top-left">
+      <img src="assets/cherry-blossom-corner.png" alt="" class="corner-cherry-blossom top-right">
+      <img src="assets/hanging-lantern.png" alt="" class="hanging-lantern lantern-left">
+      <img src="assets/hanging-lantern.png" alt="" class="hanging-lantern lantern-right">
+
+      <div class="container text-center">
+        <!-- Ganesh Idol -->
+        <div class="ganesh-wrap">
+          <img src="assets/ganesh-idol.png" alt="Lord Ganesha" class="ganesh-idol">
+          <p class="ganesh-text">|| Shree Ganeshay Namah ||</p>
+        </div>
+
+        <h1 class="couple-names">Ramita &amp; Aryan</h1>
+        <p class="wedding-date-hero">Wedding Invitation · 9th December 2026</p>
+
+        <div class="gold-divider">
+          <span class="line"></span>
+          <span class="divider-icon">🌸</span>
+          <span class="line"></span>
+        </div>
+
+        <p class="hashtag">#RAMIARYKIPREMKAHANI</p>
+
+        <!-- Tap to Reveal Countdown Button -->
+        <div class="reveal-btn-wrap">
+          <button id="reveal-countdown-btn" type="button" class="btn-reveal">
+            <span>⏳</span> Tap to Reveal Countdown <span>⏳</span>
+          </button>
+        </div>
+
+        <!-- Live Countdown Timer (Revealed) -->
+        <div id="countdown-wrapper" class="countdown-wrapper hidden">
+          <div class="countdown-grid">
+            <div class="timer-box">
+              <span id="days" class="timer-number">00</span>
+              <span class="timer-label">DAYS</span>
+            </div>
+            <div class="timer-sep">:</div>
+            <div class="timer-box">
+              <span id="hours" class="timer-number">00</span>
+              <span class="timer-label">HOURS</span>
+            </div>
+            <div class="timer-sep">:</div>
+            <div class="timer-box">
+              <span id="minutes" class="timer-number">00</span>
+              <span class="timer-label">MINUTES</span>
+            </div>
+            <div class="timer-sep">:</div>
+            <div class="timer-box">
+              <span id="seconds" class="timer-number">00</span>
+              <span class="timer-label">SECONDS</span>
+            </div>
+          </div>
+
+          <!-- Framed Couple Roka Photo -->
+          <div class="roka-card">
+            <div class="roka-image-wrap">
+              <img src="assets/roka.png" alt="Ramita and Aryan Roka Celebration" class="roka-img">
+              <div class="roka-caption">
+                <p>Ramita &amp; Aryan</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EVENTS SCHEDULE SECTION -->
+    <section class="section-events" id="events">
+      <div class="container">
+        <div class="text-center section-header">
+          <p class="section-tag">CELEBRATIONS</p>
+          <h2 class="section-title">Events Schedule</h2>
+          <div class="gold-divider">
+            <span class="line"></span>
+            <span class="divider-icon">⚜️</span>
+            <span class="line"></span>
+          </div>
+        </div>
+
+        <div class="events-timeline">
+
+          <!-- Event 1: Mehendi -->
+          <div class="event-card layout-left">
+            <div class="event-media">
+              <img src="assets/event-1.jpg" alt="Mehendi &amp; Cocktails" class="event-img">
+            </div>
+            <div class="event-details">
+              <div class="event-badge">DAY 1</div>
+              <h3 class="event-title">Mehendi &amp; Cocktails</h3>
+              <p class="event-tagline">“Follow the Colours”</p>
+              <div class="event-info">
+                <p class="event-datetime">
+                  <span class="info-icon">📅</span> Monday, December 7, 2026
+                </p>
+                <p class="event-time">
+                  <span class="info-icon">⏰</span> 07:30 PM Onwards
+                </p>
+                <p class="event-venue">
+                  <span class="info-icon">📍</span> Koti Resorts, Open Terrace
+                </p>
+              </div>
+              <a href="https://maps.app.goo.gl/xpGwveeAEZXLg8c17" target="_blank" rel="noreferrer" class="btn-directions">
+                <span>📍</span> Get Directions
+              </a>
+            </div>
+          </div>
+
+          <!-- Event 2: Haldi -->
+          <div class="event-card layout-right">
+            <div class="event-media">
+              <img src="assets/event-2.jpg" alt="Haldi Ceremony" class="event-img">
+            </div>
+            <div class="event-details">
+              <div class="event-badge">DAY 2 · MORNING</div>
+              <h3 class="event-title">Haldi Ceremony</h3>
+              <p class="event-tagline">“Kickoff the Celebrations”</p>
+              <div class="event-info">
+                <p class="event-datetime">
+                  <span class="info-icon">📅</span> Tuesday, December 8, 2026
+                </p>
+                <p class="event-time">
+                  <span class="info-icon">⏰</span> 11:00 AM Onwards
+                </p>
+                <p class="event-venue">
+                  <span class="info-icon">📍</span> Koti Resorts, Lower Garden
+                </p>
+              </div>
+              <a href="https://maps.app.goo.gl/xpGwveeAEZXLg8c17" target="_blank" rel="noreferrer" class="btn-directions">
+                <span>📍</span> Get Directions
+              </a>
+            </div>
+          </div>
+
+          <!-- Event 3: Sangeet -->
+          <div class="event-card layout-left">
+            <div class="event-media">
+              <img src="assets/event-3.jpg" alt="Ring Ceremony and Sangeet" class="event-img">
+            </div>
+            <div class="event-details">
+              <div class="event-badge">DAY 2 · EVENING</div>
+              <h3 class="event-title">Ring Ceremony &amp; Sangeet</h3>
+              <p class="event-tagline">“Follow the Music and Lights”</p>
+              <div class="event-info">
+                <p class="event-datetime">
+                  <span class="info-icon">📅</span> Tuesday, December 8, 2026
+                </p>
+                <p class="event-time">
+                  <span class="info-icon">⏰</span> 06:30 PM Onwards
+                </p>
+                <p class="event-venue">
+                  <span class="info-icon">📍</span> Koti Resorts, Main Lawn
+                </p>
+              </div>
+              <a href="https://maps.app.goo.gl/xpGwveeAEZXLg8c17" target="_blank" rel="noreferrer" class="btn-directions">
+                <span>📍</span> Get Directions
+              </a>
+            </div>
+          </div>
+
+          <!-- Event 4: Varamala -->
+          <div class="event-card layout-right">
+            <div class="event-media">
+              <img src="assets/event-4.jpg" alt="Garlands at Golden Hour" class="event-img">
+            </div>
+            <div class="event-details">
+              <div class="event-badge">WEDDING DAY</div>
+              <h3 class="event-title">Garlands at Golden Hour (Varamala)</h3>
+              <p class="event-tagline">“Come Witness Our Forever Begin”</p>
+              <div class="event-info">
+                <p class="event-datetime">
+                  <span class="info-icon">📅</span> Wednesday, December 9, 2026
+                </p>
+                <p class="event-time">
+                  <span class="info-icon">⏰</span> 02:30 PM Onwards
+                </p>
+                <p class="event-venue">
+                  <span class="info-icon">📍</span> Koti Resorts, Main Lawn
+                </p>
+              </div>
+              <a href="https://maps.app.goo.gl/xpGwveeAEZXLg8c17" target="_blank" rel="noreferrer" class="btn-directions">
+                <span>📍</span> Get Directions
+              </a>
+            </div>
+          </div>
+
+          <!-- Event 5: Pheras -->
+          <div class="event-card layout-left">
+            <div class="event-media">
+              <img src="assets/event-5.jpg" alt="Pheras" class="event-img">
+            </div>
+            <div class="event-details">
+              <div class="event-badge">THE SACRED VOWS</div>
+              <h3 class="event-title">The Sacred Pheras</h3>
+              <p class="event-tagline">“Seven Vows of Lifetime Together”</p>
+              <div class="event-info">
+                <p class="event-datetime">
+                  <span class="info-icon">📅</span> Wednesday, December 9, 2026
+                </p>
+                <p class="event-time">
+                  <span class="info-icon">⏰</span> 06:30 PM Onwards
+                </p>
+                <p class="event-venue">
+                  <span class="info-icon">📍</span> Koti Resorts, Main Lawn
+                </p>
+              </div>
+              <a href="https://maps.app.goo.gl/xpGwveeAEZXLg8c17" target="_blank" rel="noreferrer" class="btn-directions">
+                <span>📍</span> Get Directions
+              </a>
+            </div>
+          </div>
+
+          <!-- Event 6: After Party -->
+          <div class="event-card layout-right">
+            <div class="event-media">
+              <img src="assets/event-6.jpg" alt="After Party" class="event-img">
+            </div>
+            <div class="event-details">
+              <div class="event-badge">CELEBRATION</div>
+              <h3 class="event-title">After Party &amp; Dinner</h3>
+              <p class="event-tagline">“Drinks, Dinner &amp; Dance”</p>
+              <div class="event-info">
+                <p class="event-datetime">
+                  <span class="info-icon">📅</span> Wednesday, December 9, 2026
+                </p>
+                <p class="event-time">
+                  <span class="info-icon">⏰</span> 10:00 PM Onwards
+                </p>
+                <p class="event-venue">
+                  <span class="info-icon">📍</span> Indoor Banquet, Koti Resorts
+                </p>
+              </div>
+              <a href="https://maps.app.goo.gl/xpGwveeAEZXLg8c17" target="_blank" rel="noreferrer" class="btn-directions">
+                <span>📍</span> Get Directions
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- RSVP BY EVENTS (INTERACTIVE SELECTOR) -->
+    <section class="section-rsvp-events">
+      <div class="container text-center">
+        <p class="section-tag">ATTENDANCE</p>
+        <h2 class="section-title">RSVP by Dates &amp; Events</h2>
+        <div class="gold-divider">
+          <span class="line"></span>
+          <span class="divider-icon">💌</span>
+          <span class="line"></span>
+        </div>
+
+        <!-- Quick Attendance Presets -->
+        <div class="preset-buttons">
+          <button type="button" class="btn-preset active" data-preset="all">Attending All Events</button>
+          <button type="button" class="btn-preset" data-preset="day1">Day 1 Only (Mehendi)</button>
+          <button type="button" class="btn-preset" data-preset="day2">Day 2 Only (Haldi &amp; Sangeet)</button>
+          <button type="button" class="btn-preset" data-preset="wedding">Wedding Day Only</button>
+          <button type="button" class="btn-preset" data-preset="decline">Respectfully Decline</button>
+        </div>
+
+        <!-- Event Cards with Checkboxes -->
+        <div class="rsvp-cards-grid">
+          <div class="rsvp-toggle-card selected" data-event="mehendi">
+            <div class="check-indicator">✓</div>
+            <h4>Mehendi &amp; Cocktails</h4>
+            <p>7th Dec · 07:30 PM</p>
+          </div>
+          <div class="rsvp-toggle-card selected" data-event="haldi">
+            <div class="check-indicator">✓</div>
+            <h4>Haldi Ceremony</h4>
+            <p>8th Dec · 11:00 AM</p>
+          </div>
+          <div class="rsvp-toggle-card selected" data-event="sangeet">
+            <div class="check-indicator">✓</div>
+            <h4>Ring Ceremony &amp; Sangeet</h4>
+            <p>8th Dec · 06:30 PM</p>
+          </div>
+          <div class="rsvp-toggle-card selected" data-event="wedding">
+            <div class="check-indicator">✓</div>
+            <h4>Varamala &amp; Pheras</h4>
+            <p>9th Dec · 02:30 PM</p>
+          </div>
+          <div class="rsvp-toggle-card selected" data-event="afterparty">
+            <div class="check-indicator">✓</div>
+            <h4>After Party</h4>
+            <p>9th Dec · 10:00 PM</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WARDROBE GUIDE SECTION -->
+    <section class="section-wardrobe">
+      <img src="assets/cherry-blossom-corner.png" alt="" class="corner-cherry-blossom top-left">
+      <img src="assets/cherry-blossom-corner.png" alt="" class="corner-cherry-blossom top-right">
+
+      <div class="container text-center">
+        <p class="section-tag">WHAT TO WEAR</p>
+        <h2 class="section-title">Wardrobe Guide</h2>
+        <div class="gold-divider">
+          <span class="line"></span>
+          <span class="divider-icon">✨</span>
+          <span class="line"></span>
+        </div>
+        <p class="wardrobe-sub">Curated dress themes to help you look your finest!</p>
+
+        <div class="wardrobe-grid">
+          <!-- Mehendi -->
+          <div class="wardrobe-card">
+            <div class="wardrobe-img-wrap">
+              <img src="assets/dress-mehendi.png" alt="Mehendi Dress Code">
+            </div>
+            <div class="wardrobe-tag">🌿 MEHENDI</div>
+            <p class="wardrobe-desc">Bright Indo-Western Theme. Think chatak colours, fun prints &amp; festive vibes!</p>
+          </div>
+
+          <!-- Haldi -->
+          <div class="wardrobe-card">
+            <div class="wardrobe-img-wrap">
+              <img src="assets/dress-haldi.png" alt="Haldi Dress Code">
+            </div>
+            <div class="wardrobe-tag">☀️ HALDI</div>
+            <p class="wardrobe-desc">Pastel Shades. Soft, fresh &amp; effortless for the magical golden haldi glow!</p>
+          </div>
+
+          <!-- Sangeet -->
+          <div class="wardrobe-card">
+            <div class="wardrobe-img-wrap">
+              <img src="assets/dress-sangeet.png" alt="Sangeet Dress Code">
+            </div>
+            <div class="wardrobe-tag">✨ SANGEET</div>
+            <p class="wardrobe-desc">Starry Night Theme. Dark tones, glitter, shimmer &amp; statement glamorous looks!</p>
+          </div>
+
+          <!-- Wedding -->
+          <div class="wardrobe-card">
+            <div class="wardrobe-img-wrap">
+              <img src="assets/dress-wedding.png" alt="Wedding Dress Code">
+            </div>
+            <div class="wardrobe-tag">🏵️ WEDDING</div>
+            <p class="wardrobe-desc">Light &amp; Bright. Elegant, timeless, royal Indian ethnic &amp; picture-perfect!</p>
+          </div>
+
+          <!-- After Party -->
+          <div class="wardrobe-card">
+            <div class="wardrobe-img-wrap">
+              <img src="assets/dress-afterparty.png" alt="After Party Dress Code">
+            </div>
+            <div class="wardrobe-tag">🥂 AFTER PARTY</div>
+            <p class="wardrobe-desc">Casual but Party Style. Comfortable, chic, fun &amp; ready to dance the night away!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VENUE / MAP SECTION -->
+    <section class="section-venue" id="venue">
+      <div class="container text-center">
+        <p class="section-tag">DESTINATION</p>
+        <h2 class="section-title">Where We Celebrate</h2>
+        <div class="gold-divider">
+          <span class="line"></span>
+          <span class="divider-icon">🏔️</span>
+          <span class="line"></span>
+        </div>
+
+        <div class="venue-card-wrapper">
+          <div class="venue-card">
+            <div class="venue-map-container">
+              <iframe 
+                title="Koti Resorts Venue Map" 
+                src="https://maps.google.com/maps?q=Koti%20Resorts,%20Shimla&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=&amp;output=embed" 
+                class="venue-map" 
+                loading="lazy">
+              </iframe>
+              <a href="https://maps.app.goo.gl/xpGwveeAEZXLg8c17" target="_blank" rel="noreferrer" class="map-badge">
+                Open in Google Maps ↗
+              </a>
+            </div>
+            <div class="venue-content">
+              <p class="venue-sub">ALL WEDDING EVENTS</p>
+              <h3 class="venue-name">Koti Resorts, Shimla, Himachal Pradesh</h3>
+              <p class="venue-desc">Nestled in the serene hills of Shimla, surrounded by deodar forests and breathtaking Himalayan panoramic vistas.</p>
+              <div class="venue-actions">
+                <a href="https://maps.app.goo.gl/xpGwveeAEZXLg8c17" target="_blank" rel="noreferrer" class="btn-directions btn-large">
+                  <span>📍</span> Get Directions on Map
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RSVP FORM SECTION -->
+    <section class="section-rsvp" id="rsvp">
+      <div class="container">
+        <div class="text-center section-header">
+          <p class="section-tag">JOIN OUR CELEBRATION</p>
+          <h2 class="section-title">Send Your Blessings &amp; RSVP</h2>
+          <div class="gold-divider">
+            <span class="line"></span>
+            <span class="divider-icon">💌</span>
+            <span class="line"></span>
+          </div>
+        </div>
+
+        <!-- RSVP Form Box -->
+        <div class="rsvp-form-box">
+          <form id="rsvp-form">
+
+            <!-- Team Selection -->
+            <div class="form-group text-center">
+              <label class="form-label">Which side are you celebrating with? <span class="required">*</span></label>
+              <div class="team-selection">
+                <button type="button" class="btn-team" data-team="bride">
+                  <span class="team-icon">🌸</span>
+                  <span class="team-name">Ramita's Side</span>
+                </button>
+                <button type="button" class="btn-team" data-team="groom">
+                  <span class="team-icon">⚜️</span>
+                  <span class="team-name">Aryan's Side</span>
+                </button>
+              </div>
+              <input type="hidden" id="selected-team" name="team" required>
+            </div>
+
+            <!-- Full Name -->
+            <div class="form-group">
+              <label for="guest-name" class="form-label">Your Full Name <span class="required">*</span></label>
+              <input type="text" id="guest-name" name="name" class="form-input" placeholder="e.g. Priya &amp; Rohit Sharma" required>
+            </div>
+
+            <!-- Attendance Choice -->
+            <div class="form-group">
+              <label class="form-label">Will you be able to attend? <span class="required">*</span></label>
+              <div class="attendance-options">
+                <label class="radio-label">
+                  <input type="radio" name="attendance" value="yes" checked>
+                  <span class="radio-custom"></span>
+                  <span>Joyfully Accept! 🎉</span>
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="attendance" value="no">
+                  <span class="radio-custom"></span>
+                  <span>Regretfully Decline 💌</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Guest Count -->
+            <div class="form-group" id="guest-count-group">
+              <label for="guest-count" class="form-label">Number of Guests Attending</label>
+              <select id="guest-count" name="guestCount" class="form-select">
+                <option value="1 (Just me)">1 (Just me)</option>
+                <option value="2 Guests">2 Guests</option>
+                <option value="3 Guests">3 Guests</option>
+                <option value="4 Guests">4 Guests</option>
+                <option value="5+ Family">5+ Family Members</option>
+              </select>
+            </div>
+
+            <!-- Excitement Sentiments -->
+            <div class="form-group" id="excitement-group">
+              <label class="form-label">How excited are you?</label>
+              <div class="pill-checkboxes">
+                <label class="pill-check">
+                  <input type="checkbox" name="excitement" value="counting-days">
+                  <span>Already counting down the days! 🗓️</span>
+                </label>
+                <label class="pill-check">
+                  <input type="checkbox" name="excitement" value="colours-food">
+                  <span>Ready for all colours &amp; feasts! 🍛</span>
+                </label>
+                <label class="pill-check">
+                  <input type="checkbox" name="excitement" value="dancing-shoes">
+                  <span>My dancing shoes are packed! 💃🕺</span>
+                </label>
+                <label class="pill-check">
+                  <input type="checkbox" name="excitement" value="forever">
+                  <span>Excited to witness your forever begin! 💖</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Styling Services -->
+            <div class="form-group" id="styling-group">
+              <label class="form-label">Do you require assistance with Salon / Styling services?</label>
+              <div class="pill-checkboxes">
+                <label class="pill-check">
+                  <input type="checkbox" name="styling" value="makeup">
+                  <span>Makeup Assistance 💄</span>
+                </label>
+                <label class="pill-check">
+                  <input type="checkbox" name="styling" value="hair">
+                  <span>Hair Styling 💇‍♀️</span>
+                </label>
+                <label class="pill-check">
+                  <input type="checkbox" name="styling" value="saree">
+                  <span>Saree / Dupatta Draping 🥻</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Personal Message -->
+            <div class="form-group">
+              <label for="guest-message" class="form-label">Your Blessings &amp; Message for Ramita &amp; Aryan</label>
+              <textarea id="guest-message" name="message" class="form-textarea" rows="4" placeholder="Write your heartfelt wishes here..."></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="text-center submit-wrap">
+              <button type="submit" id="submit-rsvp-btn" class="btn-submit">
+                <span>Send My RSVP 💌</span>
+              </button>
+            </div>
+
+            <!-- Direct Contact -->
+            <div class="rsvp-contact">
+              <p>For questions or assistance, please reach out to:</p>
+              <a href="tel:+916387308474" class="contact-link">
+                📞 +91-6387308474 (Ramita Sachdeva)
+              </a>
+            </div>
+          </form>
+
+          <!-- RSVP Success Card -->
+          <div id="rsvp-success-card" class="rsvp-success-card hidden">
+            <h3 class="success-title">Your RSVP is on its way to us!</h3>
+            <div class="success-photo-wrap">
+              <img src="assets/roka.png" alt="Ramita &amp; Aryan" class="success-photo">
+            </div>
+            <p class="success-message">
+              Thank you for being part of our special celebration! We cannot wait to celebrate, laugh, dance, and create beautiful memories together with you in Shimla.
+            </p>
+            <button type="button" id="btn-update-rsvp" class="btn-secondary">
+              Update RSVP
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="container text-center">
+        <p class="footer-tag">WITH LOVE</p>
+        <h3 class="footer-couple">
+          <span class="flourish">R</span>amita &amp; <span class="flourish">A</span>ryan
+        </h3>
+        <div class="gold-divider">
+          <span class="line"></span>
+          <span class="divider-icon">💛</span>
+          <span class="line"></span>
+        </div>
+        <p class="footer-date">9th December 2026</p>
+        <p class="footer-hashtag">#RAMIARYKIPREMKAHANI</p>
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
